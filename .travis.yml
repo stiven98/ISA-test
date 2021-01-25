@@ -1,4 +1,4 @@
-dist: xenial
+dist: trusty
 
 branches:
   include: master
@@ -6,9 +6,12 @@ branches:
 matrix:
   include:
     - language: java
-      jdk: openjdk8
+      jdk: 
+      - oraclejdk8
+      - oraclejdk15
+      - openjdk8
       install:
-        - mvn -N io.takari:maven:wrapper -Dmaven=3.6.3
+        ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       script:
         - ./mvnw clean install
       before_script:
