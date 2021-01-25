@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "pharmacy-frontend"
+  "defaultProject": "pharmacy-frontend",
+  "cli": {
+    "analytics": "f17ab680-b6ad-4093-92e0-eb09a8c4ddff"
+  }
 }

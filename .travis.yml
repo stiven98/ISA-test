@@ -1,0 +1,22 @@
+dist: xenial
+
+branches:
+  only: develop
+
+matrix:
+  include:
+    - language: java
+      jdk: oraclejdk8
+      script:
+        - ./mvnw clean install
+      before_script:
+        - cd ./pharmacy/
+
+    - language: node_js
+      node_js: stable
+      install:
+        - npm install
+      before_install:
+        - cd ./pharmacy-frontend/
+      script:
+        - npm run build
