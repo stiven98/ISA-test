@@ -1,7 +1,7 @@
 dist: xenial
 
 branches:
-  only: develop
+  include: master
 
 matrix:
   include:
