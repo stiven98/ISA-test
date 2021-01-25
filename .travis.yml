@@ -11,7 +11,7 @@ matrix:
       - oraclejdk8
       - openjdk8
       script:
-        - ./mvn clean install
+        - mvnw clean install
       before_script:
         - cd ./pharmacy/
 
