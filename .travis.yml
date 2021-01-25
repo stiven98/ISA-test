@@ -8,7 +8,7 @@ matrix:
     - language: java
       jdk: openjdk8
       install:
-        - mvn -N io.takari:maven:wrapper -Dmaven=4.0.0
+        - mvn -N io.takari:maven:wrapper -Dmaven=3.6.3
         - ./mvnw --show-version --errors --batch-mode test-compile dependency:go-offline
       script:
         - ./mvnw clean install
