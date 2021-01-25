@@ -1,4 +1,5 @@
 dist: trusty
+sudo: required
 
 branches:
   include: master
@@ -6,12 +7,9 @@ branches:
 matrix:
   include:
     - language: java
-      jdk: 
+      jdk:
       - oraclejdk8
-      - oraclejdk15
       - openjdk8
-      install:
-        ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       script:
         - ./mvnw clean install
       before_script:
