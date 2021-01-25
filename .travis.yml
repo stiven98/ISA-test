@@ -1,6 +1,7 @@
 dist: trusty
 sudo: required
 language: java
+install: true
 
 branches:
   include: master
@@ -11,7 +12,9 @@ addons:
     token:
       secure: "YQMLyXcAshS/OnMRhExp112hXPyRYQoNw0xD4huWHqDNcHsvQkGWlek/LwAhbFv/bpJ2FgZC7H8jVXI13JRRSSwPohqrUOuQgGF+Bmjd3BKN87JSsyyjQ/EEqskzUTbvnjBo1vDioon4mGUxfvBT2ouhq1sfbg5y9FI+J8mkdeODvTvqKttZCnytAaM95uTGlvxrO61b0XNIQenK9XJ9UJRHDPQeflM0H0jrGYKRNo8zobi/ghsCda4PoH09tM5sicqFWfylzB41Q+mD3vmzvbCRfATNTfPHWVMnUpA2MeVZg3ZIDx0Zn7uy7kzSem3FApB3Zlt7TsMC3iwt+6YXsDswTzO/NAgHUYMBo9JHCgaUv93P11GpZxHEocueT4TPs7rw+1vNvlZa+wBLJP/3/ZRrEAXF9XTZT2meeEEdng6uO90visd5lvx91bH6XDOIPMn+WRaMbhZS+ViukDGiyOs2c1klgxGBZ4mpxALsmQl7AX0gaXRQqHFnSWo3VwwR8q5rTfgZGr+DlZjm3s410gYft/sIa9odcmiJLWfz2ngmq8+nmfGf475CONKfPxFVY/mJ0NRBoAdCEgiPwQi/YWeucR4VrN8EZvQG6mmgJReqC37hL6U8v8s2d1x1N7+CSOW2ivWxIPT+6zcsnEQt4B19tRpFOibyXkIoUWOTZg8="
   script:
-    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+    - mvn clean verify sonar:sonar -Pcoverage
+  before_script:
+    - cd ./pharmacy/
 
 matrix:
   include:
