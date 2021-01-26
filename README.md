@@ -4,6 +4,7 @@
 Projekat iz predmeta Internet softverske arhitekture
 
 ## Emoji guideline
+
 It is recommended to use emoji's where adequate when commiting  
 
 See also [gitmoji](https://gitmoji.carloscuesta.me/).
