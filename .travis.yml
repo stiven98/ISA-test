@@ -15,6 +15,9 @@ addons:
     - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=stiven98_ISA-test
   before_script:
     - cd ./pharmacy/
+  after_script:
+    - cd ./pharmacy-frontend/
+    - sonar-scanner
 
 matrix:
   include:
@@ -34,5 +37,4 @@ matrix:
       before_install:
         - cd ./pharmacy-frontend/
       script:
-        - sonar-scanner
         - npm run build
