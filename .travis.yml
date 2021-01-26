@@ -1,16 +1,6 @@
 dist: trusty
 sudo: required
 language: java
-jdk:
-- oraclejdk8
-- openjdk8
-script:
-- mvn clean install
-before_script:
-  - cd ./pharmacy/
-install: true
-branches:
-  include: master
 
 addons:
   sonarcloud:
